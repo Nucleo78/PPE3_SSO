@@ -35,9 +35,11 @@ namespace PPE3
             this.labelMinimize = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.conteneurBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listBoxConteneurs = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridViewConteneurs = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conteneurBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConteneurs)).BeginInit();
             this.SuspendLayout();
             // 
             // labelClose
@@ -84,13 +86,22 @@ namespace PPE3
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // listBoxConteneurs
+            // button1
             // 
-            this.listBoxConteneurs.FormattingEnabled = true;
-            this.listBoxConteneurs.Location = new System.Drawing.Point(247, 131);
-            this.listBoxConteneurs.Name = "listBoxConteneurs";
-            this.listBoxConteneurs.Size = new System.Drawing.Size(391, 524);
-            this.listBoxConteneurs.TabIndex = 3;
+            this.button1.Location = new System.Drawing.Point(260, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewConteneurs
+            // 
+            this.dataGridViewConteneurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewConteneurs.Location = new System.Drawing.Point(233, 62);
+            this.dataGridViewConteneurs.Name = "dataGridViewConteneurs";
+            this.dataGridViewConteneurs.Size = new System.Drawing.Size(529, 598);
+            this.dataGridViewConteneurs.TabIndex = 5;
             // 
             // FormMenu
             // 
@@ -98,7 +109,8 @@ namespace PPE3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(800, 698);
-            this.Controls.Add(this.listBoxConteneurs);
+            this.Controls.Add(this.dataGridViewConteneurs);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelMinimize);
             this.Controls.Add(this.labelClose);
@@ -107,11 +119,13 @@ namespace PPE3
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenu";
+            this.Load += new System.EventHandler(this.FormMenu_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormMenu_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormMenu_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormMenu_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.conteneurBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConteneurs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,6 +137,7 @@ namespace PPE3
         private System.Windows.Forms.Label labelMinimize;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.BindingSource conteneurBindingSource;
-        private System.Windows.Forms.ListBox listBoxConteneurs;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridViewConteneurs;
     }
 }

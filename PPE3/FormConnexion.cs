@@ -76,7 +76,7 @@ namespace PPE3
                         this.Hide();
                     }
                     else {
-                        MessageBox.Show("Remplis une condition");
+                        MessageBox.Show("Veuillez cochez UNE CASE");
                     }
                 }
                 else
@@ -147,29 +147,6 @@ namespace PPE3
                 textBoxMotDePasse.UseSystemPasswordChar = true;
             }
         }
-        private void buttonTest_Click(object sender, EventArgs e)
-        {
-            /*
-            try
-            {
-                Conteneur c = Conteneur.getConteneurbyNum(1);
-                string numContainer, dateAchat, typeContainer, dateDernierInsp,codeDeclaration,numInspection;
-                numContainer = c.NumContainer;
-                dateAchat = Convert.ToString(c.DateAchat);
-                typeContainer = c.TypeContainer;
-                dateDernierInsp = Convert.ToString(c.DateDernierInsp);
-                codeDeclaration = Convert.ToString(c.CodeDeclaration);
-                numInspection = Convert.ToString(c.NumInspection);
-                MessageBox.Show("NumContainer : " + numContainer +
-                    "\nDateAchat : " + dateAchat + "\nTypeContainer : " +
-                    typeContainer + "\nDateDernièreInsp :" + dateDernierInsp +
-                    "\nCodeDeclaration :"+codeDeclaration +"\nNumInspection :"+numInspection);
-            }
-            catch (Exception ec)
-            {
-                MessageBox.Show("oups");
-            }
-            */
-        }
+        
     }
 }

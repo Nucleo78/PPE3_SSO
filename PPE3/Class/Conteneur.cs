@@ -89,6 +89,30 @@ namespace PPE3.Class
             return string.Format("{0} {1} {2} {3} {4} {5}", _numContainer, _dateAchat, _typeContainer, _dateDernierInsp, _codeDeclaration, _numInspection);
         }
 
+        public static List<Conteneur> GetAllConteneurs()
+        {
+            List<Conteneur> resultat = new List<Conteneur>();
+            MySqlConnection connect = Utilitaires.GetDBConnection();
+            connect.Open();
+            MySqlCommand commandSql = connect.CreateCommand();
+            commandSql.CommandText = _selectAll;
+            MySqlDataReader enregistrements = commandSql.ExecuteReader();
+            while (enregistrements.Read())
+            {
+                Conteneur c = new Conteneur();
+                string numConteneur = Convert.ToString(enregistrements["numContainer"]);
+                c.NumContainer = Convert.ToString(numConteneur);
+                c.DateAchat = Convert.ToInt32(enregistrements["dateAchat"]);
+                c.TypeContainer = enregistrements["typeContainer"].ToString();
+                c.DateDernierInsp = Convert.ToInt32(enregistrements["dateDerniereInsp"]);
+                c.CodeDeclaration = Convert.ToInt32(enregistrements["codeDeclaration"]);
+                c.NumInspection = Convert.ToInt32(enregistrements["numInspection"]);
+                resultat.Add(c);
+            }
+            connect.Close();
+            return resultat;
+        }
+
         public static List<Conteneur> FetchAll()
         {
             List<Conteneur> resultat = new List<Conteneur>();

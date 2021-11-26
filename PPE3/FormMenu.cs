@@ -25,7 +25,8 @@ namespace PPE3
         private void FormMenu_Load(object sender, EventArgs e)
         {
             List<Conteneur> lesConteneurs = Conteneur.FetchAll();
-            listBoxConteneurs.DataSource = lesConteneurs;
+            dataGridViewConteneurs.DataSource = lesConteneurs;
+            dataGridViewConteneurs.Columns[0].HeaderText = "Numéro du conteneur";
         }
 
         #region FormMenu
@@ -99,30 +100,8 @@ namespace PPE3
             this.FormBorderStyle = FormBorderStyle.None;
         }
 
+
         #endregion
 
-
-        private void buttonTest_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Conteneur c = Conteneur.getConteneurbyNum(1);
-                string numContainer, dateAchat, typeContainer, dateDernierInsp, codeDeclaration, numInspection;
-                numContainer = c.NumContainer;
-                dateAchat = Convert.ToString(c.DateAchat);
-                typeContainer = c.TypeContainer;
-                dateDernierInsp = Convert.ToString(c.DateDernierInsp);
-                codeDeclaration = Convert.ToString(c.CodeDeclaration);
-                numInspection = Convert.ToString(c.NumInspection);
-                MessageBox.Show("NumContainer : " + numContainer +
-                    "\nDateAchat : " + dateAchat + "\nTypeContainer : " +
-                    typeContainer + "\nDateDernièreInsp :" + dateDernierInsp +
-                    "\nCodeDeclaration :" + codeDeclaration + "\nNumInspection :" + numInspection);
-            }
-            catch (Exception ec)
-            {
-                MessageBox.Show("oups");
-            }
-        }
     }
 }
